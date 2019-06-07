@@ -5,7 +5,6 @@ import { LayoutLeft } from './LayoutLeft'
 import { LayoutRight } from './LayoutRight'
 import { LayoutTop } from './LayoutTop'
 import { LayoutBottom } from './LayoutBottom'
-import pick from 'lodash/pick'
 import { LayoutSwitch } from './LayoutSwitch'
 import LayoutMaster from './LayoutMaster'
 import './Layout.css'
@@ -26,12 +25,19 @@ class Layout extends React.Component {
   render() {
     const { children, className } = this.props
     const { rendered } = this.context
+    const padding = { paddingTop: 0, paddingRight: 0, paddingLeft: 0, paddingBottom: 0 }
+    React.Children.forEach(children, child => {
+      if (child.type === LayoutTop) padding.paddingTop = this.context.top
+      if (child.type === LayoutBottom) padding.paddingBottom = this.context.bottom
+      if (child.type === LayoutLeft) padding.paddingLeft = this.context.left
+      if (child.type === LayoutRight) padding.paddingRight = this.context.right
+    })
     return (
       <Spring
-        to={pick(this.context, ['top', 'bottom', 'left', 'right'])} immediate={!rendered}
+        to={padding} immediate={!rendered}
         config={{ precision: 1 }}>
-        {({ top, bottom, left, right }) => (
-          <div className={`w-100 min-h-100 ${className}`} style={{ paddingTop: top, paddingBottom: bottom, paddingLeft: left, paddingRight: right }}>
+        {padding => (
+          <div className={`w-100 min-h-100 ${className}`} style={{ ...padding}}>
             {children}
           </div>
         )}
