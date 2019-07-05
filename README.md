@@ -14,16 +14,76 @@ npm install --save react-drawers
 
 ```jsx
 import React, { Component } from 'react'
+import Layout from '@inmagik/react-drawers'
 
-import MyComponent from 'react-drawers'
-
-class Example extends Component {
-  render () {
+class MyComponent extends Component {
+  render() {
     return (
-      <MyComponent />
+      <Layout className="classname-applied-to-content">
+        <Layout.Top className="top-classname">
+          Top
+        </Layout.Top>
+        <Layout.Left className="left-classname">
+          Left
+        </Layout.Left>
+        <Layout.Right className="right-classname">
+          Right
+        </Layout.Right>
+        <Layout.Bottom className="bottom-classname">
+          Bottom
+        </Layout.Bottom>
+        {/* 
+          The following is custom content, and will be displayed as the content of the page
+          In this example, I put some button arranged in a flower-like shape
+          Each button controls the collapsing of one of the drawers
+        */}
+        <div className="flex-1 flex-col justify-content-center">
+          <div>
+            <div className="flex-row justify-content-center">
+              <Layout.Switch top>
+                {({ open, toggle }) => (
+                  <button onClick={toggle}>Toggle top</button>
+                )}
+              </Layout.Switch>
+            </div>
+            <div className="flex-row justify-content-center">
+              <Layout.Switch left>
+                {({ open, toggle }) => (
+                  <button onClick={toggle}>Toggle left</button>
+                )}
+              </Layout.Switch>
+              <Layout.Switch right>
+                {({ open, toggle }) => (
+                  <button onClick={toggle}>Toggle right</button>
+                )}
+              </Layout.Switch>
+            </div>
+            <div className="flex-row justify-content-center">
+              <Layout.Switch bottom>
+                {({ open, toggle }) => (
+                  <button onClick={toggle}>Toggle bottom</button>
+                )}
+              </Layout.Switch>
+            </div>
+          </div>
+        </div>
+      </Layout>
     )
   }
 }
+
+class App extends Component {
+
+  render() {
+    return (
+      <Layout.Master top={65} left={200} right={150} bottom={20}>
+        <MyComponent />
+      </Layout.Master>
+    )
+  }
+
+}
+
 ```
 
 ## License
