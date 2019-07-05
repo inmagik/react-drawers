@@ -4,7 +4,7 @@ import { before } from './util'
 import { Spring, animated } from 'react-spring/renderprops'
 
 export const LayoutRight = ({ children, className }) => {
-  const { top, bottom, right, mode, rendered } = useContext(LayoutContext)
+  const { top, bottom, right, mode, rendered, rightWidth } = useContext(LayoutContext)
   const style = {
     top: before(mode, 'R', 'T') ? 0 : top,
     bottom: before(mode, 'R', 'B') ? 0 : bottom,
@@ -17,8 +17,10 @@ export const LayoutRight = ({ children, className }) => {
       to={style} immediate={!rendered}
       config={{ precision: 1 }}>
       {style => (
-        <animated.div className={`position-fixed layout-panel ${className}`} style={style}>
-          {children}
+        <animated.div className={`position-fixed layout-panel`} style={style}>
+          <div className={className} style={{ width: rightWidth, minWidth: rightWidth, height: '100%' }}>
+            {children}
+          </div>
         </animated.div>
       )}
     </Spring>

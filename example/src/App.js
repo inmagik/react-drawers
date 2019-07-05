@@ -11,7 +11,8 @@ export default class App extends Component {
             Top
           </Layout.Top>
           <Layout.Left className="yellow flex-row justify-content-center align-items-center">
-            Left
+            Left<br />
+            With some longish content, just to see how it collapses
           </Layout.Left>
           <Layout.Right className="blue flex-row justify-content-center align-items-center">
             Right
