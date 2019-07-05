@@ -155,7 +155,7 @@ This is the component that represents the `Bottom` drawer. Any child of this com
 | className         | string | The classname to apply to the content container                      |
 
 ### Layout.Switch
-This component is a utility to build buttons that make the drawer collapse or expand. It takes a function as a child, which is given two (positional) arguments: the state of the controlled drawer (`true` means open drawer), and the `toggle` function used to toggle the state of the drawer. It is safe to put a switch inside a drawer. It is not advisable to put the only switch for a drawer inside the very same drawer (because, when the drawer is collapsed, there are no ways to expand the drawer again with that very same switch).
+This component is a utility to build buttons that make the drawer collapse or expand. It takes a function as a child, which is given an object with two properties: the state (called `open`) of the controlled drawer (`true` means open drawer), and the `toggle` function used to toggle the state of the drawer. It is safe to put a switch inside a drawer. It is not advisable to put the only switch for a drawer inside the very same drawer (because, when the drawer is collapsed, there are no ways to expand the drawer again with that very same switch).
 
 **Available properties**
 
