@@ -8,6 +8,7 @@ import { LayoutBottom } from './LayoutBottom'
 import { LayoutSwitch } from './LayoutSwitch'
 import LayoutMaster from './LayoutMaster'
 import './Layout.css'
+import { LayoutContent } from './LayoutContent'
 
 class Layout extends React.Component {
   
@@ -21,6 +22,8 @@ class Layout extends React.Component {
   static Master = LayoutMaster
 
   static Switch = LayoutSwitch
+
+  static Content = LayoutContent
 
   render() {
     const { children, className } = this.props

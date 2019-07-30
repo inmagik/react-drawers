@@ -154,6 +154,22 @@ This is the component that represents the `Bottom` drawer. Any child of this com
 | ----------------- | ------ | -------------------------------------------------------------------- |
 | className         | string | The classname to apply to the content container                      |
 
+### Layout.Content
+The drawer layout is designed to allow the normal vertical scrolling of the page in case the content does not fit the screen. In other words the height of the body usually depends on its content, and setting it to match the height of the viewport can become cumbersome. For this reason the library provides the `Layout.Content` component, which is granted to fill the area left free by drawers and to animate according to the open and close transitions of the drawers
+
+**Available properties**
+
+| Property          | Type   | Description                                                          |
+| ----------------- | ------ | -------------------------------------------------------------------- |
+| className         | string | The classname to apply to the content container                      |
+
+**Available properties**
+
+| Property          | Type   | Description                                                          |
+| ----------------- | ------ | -------------------------------------------------------------------- |
+| className         | string | The classname to apply to the content container                      |
+
+
 ### Layout.Switch
 This component is a utility to build buttons that make the drawer collapse or expand. It takes a function as a child, which is given an object with two properties: the state (called `open`) of the controlled drawer (`true` means open drawer), and the `toggle` function used to toggle the state of the drawer. It is safe to put a switch inside a drawer. It is not advisable to put the only switch for a drawer inside the very same drawer (because, when the drawer is collapsed, there are no ways to expand the drawer again with that very same switch).
 

@@ -5,7 +5,7 @@ import Layout from 'react-drawers'
 export default class App extends Component {
   render() {
     return (
-      <Layout.Master top={65} left={200} right={150} bottom={20}>
+      <Layout.Master mode="TBLR" top={65} left={200} right={150} bottom={20}>
         <Layout className="flex-col">
           <Layout.Top className="red flex-row justify-content-center align-items-center">
             Top
@@ -20,8 +20,8 @@ export default class App extends Component {
           <Layout.Bottom className="green flex-row justify-content-center align-items-center">
             Bottom
           </Layout.Bottom>
-          <div className="flex-1 flex-col justify-content-center">
-            <div>
+          <Layout.Content className="grey">
+            <div style={{ width: '100%', height: '100%' }} className="flex-col justify-content-center">
               <div className="flex-row justify-content-center">
                 <Layout.Switch top>
                   {({ open, toggle }) => (
@@ -51,7 +51,7 @@ export default class App extends Component {
             </div>
 
 
-          </div>
+          </Layout.Content>
         </Layout>
       </Layout.Master>
     )
