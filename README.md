@@ -5,14 +5,14 @@
 ## Install
 
 ```sh
-npm install --save @inmagik/react-drawers
+npm install --save react-drawers
 ```
 
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
-import Layout from '@inmagik/react-drawers'
+import Layout from 'react-drawers'
 
 class MyComponent extends Component {
   render() {
