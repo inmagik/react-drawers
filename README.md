@@ -117,6 +117,7 @@ This is the component that wraps a single page where you want to enable drawers.
 | Property          | Type   | Description                                                          |
 | ----------------- | ------ | -------------------------------------------------------------------- |
 | className         | string | The classname to apply to the content container                      |
+| absolute          | bool   | If true, use absolute positioning (by default, it uses fixed)        |
 
 ### Layout.Left
 This is the component that represents the `Left` drawer. Any child of this component will be rendered in the `Left` drawer. Insert it in a `Layout` component where you need to enable the `Left` drawer.
