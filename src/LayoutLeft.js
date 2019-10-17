@@ -1,29 +1,22 @@
 import React, { useContext } from 'react'
 import LayoutContext from './LayoutContext'
 import { before } from './util'
-import { Spring, animated } from 'react-spring/renderprops'
+import styles from "./Layout.module.css"
 
 export const LayoutLeft = ({ children, className }) => {
-  const { top, bottom, left, mode, rendered, leftWidth } = useContext(LayoutContext)
+  const { top, bottom, left, leftWidth, mode } = useContext(LayoutContext)
   const style = {
     top: before(mode, 'L', 'T') ? 0 : top,
     bottom: before(mode, 'L', 'B') ? 0 : bottom,
     left: 0,
-    width: left,
+    transform: `translate3d(${left - leftWidth}px, 0, 0)`
   }
   return (
-    <Spring
-      native
-      to={style} immediate={!rendered}
-      config={{ precision: 1 }}>
-      {style => (
-        <animated.div className={`position-fixed layout-panel`} style={style}>
-          <div className={className} style={{ width: leftWidth, minWidth: leftWidth, height: '100%' }}>
-            {children}
-          </div>
-        </animated.div>
-      )}
-    </Spring>
+    <div className={`${styles.position_fixed} ${styles.layout_panel}`} style={style}>
+      <div className={className} style={{ width: leftWidth, minWidth: leftWidth, height: '100%' }}>
+        {children}
+      </div>
+    </div>
   )
 }
 

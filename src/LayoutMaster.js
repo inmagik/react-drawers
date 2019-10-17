@@ -45,13 +45,7 @@ class LayoutMaster extends React.Component {
         ))
       },
       mode: this.props.mode,
-      rendered: false
     }
-  }
-  componentDidMount() {
-    this.setState({
-      rendered: true
-    })
   }
   componentDidUpdate(prevProps) {
     const prev = pick(prevProps, ['mode', 'top', 'left', 'bottom', 'right'])

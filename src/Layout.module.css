@@ -1,0 +1,36 @@
+.layout_panel {
+  z-index: 1030;
+  transition: all 750ms ease-in-out;
+}
+
+.layout_animated {
+  transition: all 750ms ease-in-out;
+}
+
+.position_fixed {
+  position: fixed !important;
+}
+
+.layout_absolute .position_fixed {
+  position: absolute !important;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.w_100 {
+  width: 100% !important;
+}
+
+.min_h_100 {
+  min-height: 100% !important;
+}
+
+.layout_root {
+  transition: all 750ms ease-in-out;
+  overflow: hidden;
+  width: 100% !important;
+  min-height: 100% !important;
+  position: relative;
+}

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import LayoutContext from './LayoutContext'
-import { Spring, animated } from 'react-spring/renderprops'
+import styles from "./Layout.module.css"
 
 export const LayoutContent = ({ children, className }) => {
-  const { top, left, right, bottom, rendered } = useContext(LayoutContext)
+  const { top, left, right, bottom } = useContext(LayoutContext)
   const style = {
     left: left,
     right: right,
@@ -11,18 +11,11 @@ export const LayoutContent = ({ children, className }) => {
     bottom: bottom
   }
   return (
-    <Spring
-      native
-      to={style} immediate={!rendered}
-      config={{ precision: 1 }}>
-      {style => (
-        <animated.div className={`position-fixed`} style={style}>
-          <div className={className} style={{ height: '100%', width: '100%' }}>
-            {children}
-          </div>
-        </animated.div>
-      )}
-    </Spring>
+    <div className={`${styles.position_fixed} ${styles.layout_animated}`} style={style}>
+      <div className={className} style={{ height: '100%', width: '100%' }}>
+        {children}
+      </div>
+    </div>
   )
 }
 
