@@ -1,6 +1,6 @@
 {
-  "name": "@inmagik/react-drawers",
-  "version": "2.0.0-rc1",
+  "name": "react-drawers",
+  "version": "1.0.0-rc1",
   "description": "Collapsible docked panels for React",
   "author": "osioalberto@gmail.com",
   "license": "MIT",

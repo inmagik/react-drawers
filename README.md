@@ -180,4 +180,4 @@ Only one of this properties must be set at a time. In case you try to set more t
 
 ## License
 
-MIT © [osioalberto@gmail.com](https://github.com/osioalberto@gmail.com)
+MIT © [Inmagik s.r.l.](https://github.com/inmagik)
