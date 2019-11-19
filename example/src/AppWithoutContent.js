@@ -5,7 +5,7 @@ import Layout from 'react-drawers'
 export default class App extends Component {
   render() {
     return (
-      <Layout.Master top={65} left={200} right={150} bottom={20} rightOpenOnStart={false}>
+      <Layout.Master top={65} left={200} right={150} bottom={20} rightOpenOnStart={false} leftCollapsedWidth={30}>
         <Layout absolute className="flex-col">
           <Layout.Top className="red flex-row justify-content-center align-items-center">
             Top

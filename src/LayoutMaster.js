@@ -16,31 +16,35 @@ class LayoutMaster extends React.Component {
       bottomHeight: props.bottom,
       leftWidth: props.left,
       rightWidth: props.right,
+      topCollapsedHeight: props.topCollapsedHeight,
+      leftCollapsedWidth: props.leftCollapsedWidth,
+      rightCollapsedWidth: props.rightCollapsedWidth,
+      bottomCollapsedHeight: props.bottomCollapsedHeight,
       toggleTop: () => {
         this.setState(prevState => (
           {
-            top: prevState.topHeight - prevState.top
+            top: prevState.topHeight === prevState.top ? prevState.topCollapsedHeight : prevState.topHeight
           }
         ))
       },
       toggleBottom: () => {
         this.setState(prevState => (
           {
-            bottom: prevState.bottomHeight - prevState.bottom
+            bottom: prevState.bottomHeight === prevState.bottom ? prevState.bottomCollapsedHeight : prevState.bottomHeight
           }
         ))
       },
       toggleLeft: () => {
         this.setState(prevState => (
           {
-            left: prevState.leftWidth - prevState.left
+            left: prevState.leftWidth === prevState.left ? prevState.leftCollapsedWidth : prevState.leftWidth
           }
         ))
       },
       toggleRight: () => {
         this.setState(prevState => (
           {
-            right: prevState.rightWidth - prevState.right
+            right: prevState.rightWidth === prevState.right ? prevState.rightCollapsedWidth : prevState.rightWidth
           }
         ))
       },
@@ -81,6 +85,10 @@ LayoutMaster.defaultProps = {
   bottomOpenOnStart: true,
   leftOpenOnStart: true,
   rightOpenOnStart: true,
+  topCollapsedHeight: 0,
+  leftCollapsedWidth: 0,
+  rightCollapsedWidth: 0,
+  bottomCollapsedHeight: 0,
   mode: 'TBLR'
 }
 
