@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import LayoutContext from './LayoutContext'
 import { LayoutLeft } from './LayoutLeft'
 import { LayoutRight } from './LayoutRight'
@@ -56,7 +57,14 @@ class Layout extends React.Component {
 }
 
 Layout.defaultProps = {
-  className: ''
+  className: '',
+  absolute: false
+}
+
+Layout.propTypes = {
+  className: PropTypes.string,
+  absolute: PropTypes.bool,
+  children: PropTypes.node
 }
 
 export default Layout

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import LayoutContext from './LayoutContext'
 import { before } from './util'
 import styles from "./Layout.module.css"
@@ -22,4 +23,9 @@ export const LayoutRight = ({ children, className }) => {
 
 LayoutRight.defaultProps = {
   className: ''
+}
+
+LayoutRight.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node
 }

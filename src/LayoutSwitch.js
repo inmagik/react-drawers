@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import PropTypes from 'prop-types'
 import LayoutContext from './LayoutContext'
 
 export const LayoutSwitch = ({ left, right, top, bottom, children }) => {
@@ -13,4 +14,12 @@ LayoutSwitch.defaultProps = {
   right: false,
   top: false,
   bottom: false
+}
+
+LayoutSwitch.propTypes = {
+  left: PropTypes.bool,
+  right: PropTypes.bool,
+  top: PropTypes.bool,
+  bottom: PropTypes.bool,
+  children: PropTypes.func.isRequired
 }

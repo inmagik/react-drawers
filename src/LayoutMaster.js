@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import LayoutContext from './LayoutContext'
 import pick from 'lodash/pick'
 
@@ -90,6 +91,27 @@ LayoutMaster.defaultProps = {
   rightCollapsedWidth: 0,
   bottomCollapsedHeight: 0,
   mode: 'TBLR'
+}
+
+LayoutMaster.propTypes = {
+  top: PropTypes.number,
+  bottom: PropTypes.number,
+  left: PropTypes.number,
+  right: PropTypes.number,
+  topOpenOnStart: PropTypes.bool,
+  bottomOpenOnStart: PropTypes.bool,
+  leftOpenOnStart: PropTypes.bool,
+  rightOpenOnStart: PropTypes.bool,
+  topCollapsedHeight: PropTypes.number,
+  leftCollapsedWidth: PropTypes.number,
+  rightCollapsedWidth: PropTypes.number,
+  bottomCollapsedHeight: PropTypes.number,
+  mode: PropTypes.oneOf([
+      'TBLR', 'BTLR', 'LTBR', 'TLBR', 'BLTR', 'LBTR', 'RBTL', 'BRTL',
+      'TRBL', 'RTBL', 'BTRL', 'TBRL', 'TLRB', 'LTRB', 'RTLB', 'TRLB',
+      'LRTB', 'RLTB', 'RLBT', 'LRBT', 'BRLT', 'RBLT', 'LBRT', 'BLRT'
+  ]),
+  children: PropTypes.node
 }
 
 export default LayoutMaster
