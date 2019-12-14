@@ -15,7 +15,9 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
+    "prepare": "yarn run build",
+    "test": "react-scripts test",
+    "test-coverage": "react-scripts test --coverage --watchAll=false"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -25,19 +27,20 @@
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.5",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
-    "eslint": "^5.16.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint-config-react-app": "^4.0.1",
     "eslint-plugin-flowtype": "2.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "1.5.0",
+    "prettier": "^1.19.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rollup": "^0.64.1",
@@ -52,6 +55,13 @@
     "dist"
   ],
   "dependencies": {
-    "lodash.pick": "^4.4.0"
+    "lodash.pick": "^4.4.0",
+    "react-scripts": "^3.3.0"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "singleQuote": true
   }
 }
