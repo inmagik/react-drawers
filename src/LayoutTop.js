@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import LayoutContext from './LayoutContext'
-import { before } from './util'
+import { before, getZIndex } from './util'
 import styles from "./Layout.module.css"
 
 export const LayoutTop = ({ children, className }) => {
@@ -9,7 +9,8 @@ export const LayoutTop = ({ children, className }) => {
     left: before(mode, 'T', 'L') ? 0 : left,
     right: before(mode, 'T', 'R') ? 0 : right,
     top: 0,
-    transform: `translate3d(0, ${top - topHeight}px, 0)`
+    transform: `translate3d(0, ${top - topHeight}px, 0)`,
+    zIndex: getZIndex(mode, 'T'),
   }
   return (
     <div className={`${styles.position_fixed} ${styles.layout_panel}`} style={style}>
