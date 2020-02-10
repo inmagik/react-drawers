@@ -1,3 +1,9 @@
+# Version 1.2.0
+10th February 2019
+
+* **New Features**
+  * Automatic z-index management, useful for shadows, ...
+
 # Version 1.1.0
 9th November 2019
 
