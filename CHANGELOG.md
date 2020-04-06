@@ -1,3 +1,9 @@
+# Version 1.2.1
+6th April 2020
+
+* **Fixes**
+  * Dependency upgrade due to security issues
+
 # Version 1.2.0
 10th February 2019
 
