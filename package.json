@@ -4,7 +4,7 @@
   "description": "Collapsible docked panels for React",
   "author": "osioalberto@gmail.com",
   "license": "MIT",
-  "repository": "osioalberto/react-drawers",
+  "repository": "https://github.com/inmagik/react-drawers",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
