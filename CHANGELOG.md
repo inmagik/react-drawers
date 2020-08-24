@@ -1,3 +1,12 @@
+# Version 1.4.0
+24th August 2020
+
+* **New features**
+  * Added hooks to programmatically control drawers
+
+* **Fixes**
+  * Fixed Layout.Switch: in some situations it could state a drawer is open even if it is closed
+
 # Version 1.3.0
 24th August 2020
 
