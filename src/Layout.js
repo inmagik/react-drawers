@@ -27,25 +27,50 @@ class Layout extends React.Component {
 
   render() {
     const { children, className, absolute } = this.props
+    const drawers = { paddingTop: 0, paddingRight: 0, paddingLeft: 0, paddingBottom: 0 }
     const padding = { paddingTop: 0, paddingRight: 0, paddingLeft: 0, paddingBottom: 0 }
     const classNames = [styles.layout_root, className]
+    const {
+      top: ctxTop, left: ctxLeft, right: ctxRight, bottom: ctxBottom,
+      topOverContent, leftOverContent, rightOverContent, bottomOverContent,
+    } = this.context
     if (absolute) {
       classNames.push(styles.layout_absolute)
     }
     React.Children.forEach(children, child => {
       if (!child || !child.type) return;
-      if (child.type === LayoutTop) padding.paddingTop = this.context.top
-      if (child.type === LayoutBottom) padding.paddingBottom = this.context.bottom
-      if (child.type === LayoutLeft) padding.paddingLeft = this.context.left
-      if (child.type === LayoutRight) padding.paddingRight = this.context.right
+      if (child.type === LayoutTop) {
+        drawers.paddingTop = ctxTop
+        if (!topOverContent) {
+          padding.paddingTop = ctxTop
+        }
+      }
+      if (child.type === LayoutBottom) {
+        drawers.paddingBottom = ctxBottom
+        if (!bottomOverContent) {
+          padding.paddingBottom = ctxBottom
+        }
+      }
+      if (child.type === LayoutLeft) {
+        drawers.paddingLeft = ctxLeft
+        if (!leftOverContent) {
+          padding.paddingLeft = ctxLeft
+        }
+      }
+      if (child.type === LayoutRight) {
+        drawers.paddingRight = ctxRight
+        if (!rightOverContent) {
+          padding.paddingRight = ctxRight
+        }
+      }
     })
     return (
       <LayoutContext.Provider value={{
         ...this.context,
-        top: padding.paddingTop,
-        left: padding.paddingLeft,
-        right: padding.paddingRight,
-        bottom: padding.paddingBottom
+        top: drawers.paddingTop,
+        left: drawers.paddingLeft,
+        right: drawers.paddingRight,
+        bottom: drawers.paddingBottom
       }}>
         <div className={classNames.join(' ')} style={{ ...padding }}>
           {children}

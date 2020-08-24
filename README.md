@@ -91,21 +91,25 @@ This is the context component that defines the sizing and the initial state of t
 
 **Available properties**
 
-| Property             | Type   | Description                                                          |
-| -------------------- | ------ | -------------------------------------------------------------------- |
-| top                  | int    | The height of the top drawer                                         |
-| left                 | int    | The width of the left drawer                                         |
-| right                | int    | The width of the right drawer                                        |
-| bottom               | int    | The height of the bottom drawer                                      |
-| topOpenOnStart       | bool   | Whether to spawn the top drawer open or closed                       |
-| leftOpenOnStart      | bool   | Whether to spawn the left drawer open or closed                      |
-| rightOpenOnStart     | bool   | Whether to spawn the right drawer open or closed                     |
-| bottomOpenOnStart    | bool   | Whether to spawn the bottom drawer open or closed                    |
-| topCollapsedWidth    | int    | The dimension of the top drawer when it is in the collapsed state    |
-| leftCollapsedWidth   | int    | The dimension of the left drawer when it is in the collapsed state   |
-| rightCollapsedWidth  | int    | The dimension of the right drawer when it is in the collapsed state  |
-| bottomCollapsedWidth | int    | The dimension of the bottom drawer when it is in the collapsed state |
-| mode                 | string | The definition of how to solve the overlapping of drawers, see later |
+| Property             | Type   | Description                                                                            |
+| -------------------- | ------ | -------------------------------------------------------------------------------------- |
+| top                  | int    | The height of the top drawer                                                           |
+| left                 | int    | The width of the left drawer                                                           |
+| right                | int    | The width of the right drawer                                                          |
+| bottom               | int    | The height of the bottom drawer                                                        |
+| topOpenOnStart       | bool   | Whether to spawn the top drawer open or closed                                         |
+| leftOpenOnStart      | bool   | Whether to spawn the left drawer open or closed                                        |
+| rightOpenOnStart     | bool   | Whether to spawn the right drawer open or closed                                       |
+| bottomOpenOnStart    | bool   | Whether to spawn the bottom drawer open or closed                                      |
+| topCollapsedWidth    | int    | The dimension of the top drawer when it is in the collapsed state                      |
+| leftCollapsedWidth   | int    | The dimension of the left drawer when it is in the collapsed state                     |
+| rightCollapsedWidth  | int    | The dimension of the right drawer when it is in the collapsed state                    |
+| bottomCollapsedWidth | int    | The dimension of the bottom drawer when it is in the collapsed state                   |
+| topOverContent       | bool   | True if top drawer should cover content when open, false otherwise (default: false)    |
+| leftOverContent      | bool   | True if left drawer should cover content when open, false otherwise (default: false)   |
+| rightOverContent     | bool   | True if right drawer should cover content when open, false otherwise (default: false)  |
+| bottomOverContent    | bool   | True if bottom drawer should cover content when open, false otherwise (default: false) |
+| mode                 | string | The definition of how to solve the overlapping of drawers, see later                   |
 
 The **mode** property is used to define how the drawers overlap when they are open simultaneously. Not all the possible overlappings are currently supported. A mode is any anagram of the word `TLBR`, where `T` stands for `Top`, `L` for `Left` and so on. The earlier the letter appears in the string, the higher the priority of the drawer. The drawer corresponding to the first letter covers all the others, the drawer correponding to the second letter is covered by the first (in case they overlap) but covers the other two, and so on. 
 

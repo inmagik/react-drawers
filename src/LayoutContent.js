@@ -3,12 +3,12 @@ import LayoutContext from './LayoutContext'
 import styles from "./Layout.module.css"
 
 export const LayoutContent = ({ children, className }) => {
-  const { top, left, right, bottom } = useContext(LayoutContext)
+  const { top, left, right, bottom, topOverContent, leftOverContent, rightOverContent, bottomOverContent } = useContext(LayoutContext)
   const style = {
-    left: left,
-    right: right,
-    top: top,
-    bottom: bottom
+    left: leftOverContent ? 0 : left,
+    right: rightOverContent ? 0 : right,
+    top: topOverContent ? 0 : top,
+    bottom: bottomOverContent ? 0 : bottom
   }
   return (
     <div className={`${styles.position_fixed} ${styles.layout_animated}`} style={style}>

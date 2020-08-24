@@ -20,6 +20,10 @@ class LayoutMaster extends React.Component {
       leftCollapsedWidth: props.leftCollapsedWidth,
       rightCollapsedWidth: props.rightCollapsedWidth,
       bottomCollapsedHeight: props.bottomCollapsedHeight,
+      topOverContent: props.topOverContent,
+      leftOverContent: props.leftOverContent,
+      rightOverContent: props.rightOverContent,
+      bottomOverContent: props.bottomOverContent,
       toggleTop: () => {
         this.setState(prevState => (
           {
@@ -89,6 +93,10 @@ LayoutMaster.defaultProps = {
   leftCollapsedWidth: 0,
   rightCollapsedWidth: 0,
   bottomCollapsedHeight: 0,
+  topOverContent: false,
+  leftOverContent: false,
+  rightOverContent: false,
+  bottomOverContent: false,
   mode: 'TBLR'
 }
 
