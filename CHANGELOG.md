@@ -11,7 +11,7 @@
   * Dependency upgrade due to security issues
 
 # Version 1.2.0
-10th February 2019
+10th February 2020
 
 * **New Features**
   * Automatic z-index management, useful for shadows, ...
