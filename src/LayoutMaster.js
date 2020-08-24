@@ -52,6 +52,62 @@ class LayoutMaster extends React.Component {
           }
         ))
       },
+      openTop: () => {
+        this.setState(prevState => (
+          {
+            top: prevState.topHeight
+          }
+        ))
+      },
+      openLeft: () => {
+        this.setState(prevState => (
+          {
+            left: prevState.leftWidth
+          }
+        ))
+      },
+      openRight: () => {
+        this.setState(prevState => (
+          {
+            right: prevState.rightWidth
+          }
+        ))
+      },
+      openBottom: () => {
+        this.setState(prevState => (
+          {
+            bottom: prevState.bottomHeight
+          }
+        ))
+      },
+      closeTop: () => {
+        this.setState(prevState => (
+          {
+            top: prevState.topCollapsedHeight
+          }
+        ))
+      },
+      closeLeft: () => {
+        this.setState(prevState => (
+          {
+            left: prevState.leftCollapsedWidth
+          }
+        ))
+      },
+      closeRight: () => {
+        this.setState(prevState => (
+          {
+            right: prevState.rightCollapsedWidth
+          }
+        ))
+      },
+      closeBottom: () => {
+        this.setState(prevState => (
+          {
+            bottom: prevState.bottomCollapsedHeight
+          }
+        ))
+      },
       mode: this.props.mode,
     }
   }
