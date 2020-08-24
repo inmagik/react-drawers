@@ -186,6 +186,26 @@ This component is a utility to build buttons that make the drawer collapse or ex
 
 Only one of this properties must be set at a time. In case you try to set more than one, the one with the highest priority will be taken into account. Priority order is `left`, `right`, `top`, `bottom`. If none of these is set, the behaviour of the component is undefined.
 
+### Programmatic control of drawers
+Starting from version 1.4.0, it is possible to use some hooks to programmatically control drawers, like in the following example
+
+```jsx
+import { useLeftDrawer } from "react-drawers"
+
+const MyComponent = () => {
+  const { close } = useLeftDrawer()
+  return (
+    <button type="button" onClick={() => close()}>Close left drawer</button>
+  )
+}
+```
+
+There are four hooks (one for each drawer): `useTopDrawer`, `useRightDrawer`, `useBottomDrawer` and `useLeftDrawer`. All of them have the same return value, which consists of a JavaScript object with the following properties
+- `open`, function to force the drawer to open
+- `close`, function to force the drawer to close
+- `toggle`, function to toggle the drawer
+- `isOpen`, boolean that states if the drawer is open or closed
+
 ## License
 
 MIT © [Inmagik s.r.l.](https://github.com/inmagik)
