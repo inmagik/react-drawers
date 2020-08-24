@@ -1,3 +1,9 @@
+# Version 1.3.0
+24th August 2020
+
+* **New features**
+  * Added properties to control whether drawers should move or cover content when opened
+
 # Version 1.2.1
 6th April 2020
 
