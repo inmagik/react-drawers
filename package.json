@@ -1,6 +1,6 @@
 {
-  "name": "react-drawers",
-  "version": "1.4.0",
+  "name": "@inmagik/react-drawers",
+  "version": "1.5.0",
   "description": "Collapsible docked panels for React",
   "author": "osioalberto@gmail.com",
   "license": "MIT",
@@ -18,9 +18,8 @@
     "prepare": "yarn run build"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^16.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -31,7 +30,10 @@
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@rollup/plugin-url": "^5.0.1",
+    "@types/lodash.pick": "^4.4.9",
+    "@types/react": "^18.3.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^5.1.4",
     "eslint": "^6.8.0",
@@ -41,11 +43,12 @@
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "1.5.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^18",
+    "react-dom": "^18",
     "rollup": "^2.26.5",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^2.5.0"
+    "rollup-plugin-postcss": "^2.5.0",
+    "typescript": "^5.4.5"
   },
   "files": [
     "dist"
