@@ -104,7 +104,7 @@ export function LayoutMaster(props: Props) {
         if (prev[k] !== curr[k]) changes = true
       }
       if (changes)
-        setState(prevState => ({
+        setState((prevState) => ({
           ...prevState,
           mode: curr.mode,
           topHeight: curr.top,
@@ -128,10 +128,13 @@ export function LayoutMaster(props: Props) {
     }))
   }, [])
   const toggleLeft = useCallback(() => {
-    setState((prevState) => ({
-      ...prevState,
-      left: prevState.leftWidth === prevState.left ? prevState.leftCollapsedWidth : prevState.leftWidth,
-    }))
+    setState((prevState) => {
+      console.log(prevState.leftWidth, prevState.leftCollapsedWidth, prevState.left)
+      return {
+        ...prevState,
+        left: prevState.leftWidth === prevState.left ? prevState.leftCollapsedWidth : prevState.leftWidth,
+      }
+    })
   }, [])
   const toggleRight = useCallback(() => {
     setState((prevState) => ({
@@ -204,7 +207,7 @@ export function LayoutMaster(props: Props) {
       closeLeft,
       closeRight,
     }),
-    []
+    [state, toggleTop, toggleBottom, toggleLeft, toggleRight, openTop, openBottom, openLeft, openRight, closeTop, closeBottom, closeLeft, closeRight]
   )
 
   return <LayoutContext.Provider value={ctx}>{props.children}</LayoutContext.Provider>

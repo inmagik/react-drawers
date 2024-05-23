@@ -16,6 +16,7 @@ export function LayoutSwitch({ left = false, right = false, top = false, bottom 
   const { isOpen: isBottomOpen, toggle: toggleBottom } = useBottomDrawer()
   const { isOpen: isLeftOpen, toggle: toggleLeft } = useLeftDrawer()
   const { isOpen: isRightOpen, toggle: toggleRight } = useRightDrawer()
+
   if (left) {
     return children({ open: isLeftOpen, toggle: toggleLeft })
   }
